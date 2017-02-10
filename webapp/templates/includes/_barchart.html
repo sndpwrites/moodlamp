@@ -1,0 +1,44 @@
+{% extends "personal/header.html" %}
+
+{% block content %}
+		<div id="use_cases"  fill="white" class="padding-bottom-md">
+
+            <div class="container">
+                <div class="row text-center margin-top-md margin-bottom-md">
+                    <script type="text/javascript">
+                        window.onload = function () {
+                            var chart = new CanvasJS.Chart("chartContainer", {
+                                title: {
+                                    text: "Basic Column Chart"
+                                },
+                                data: [{
+                                    type: "column",
+                                    dataPoints: [
+                                        { y: 45, label: "Apple" },
+                                        { y: 31, label: "Mango" },
+                                        { y: 52, label: "Pineapple" },
+                                        { y: 10, label: "Grapes" },
+                                        { y: 46, label: "Lemon" },
+                                        { y: 30, label: "Banana" },
+                                        { y: 50, label: "Watermelon" },
+                                        { y: 28, label: "Coconut" },
+                                        { y: 45, label: "Lychee" },
+                                        { y: 15, label: "Palm" },
+                                        { y: 48, label: "Orange" },
+                                        { y: 38, label: "Muskmelon" },
+                                        { y: 41, label: "Strawberry" },
+                                        { y: 25, label: "Kiwi" },
+                                        { y: 50, label: "Guava" },
+                                    ]
+                                }]
+                            });
+                            chart.render();
+                        }
+                    </script>
+                    <div id="chartContainer" style="height: 400px; width: 100%;"></div>
+
+
+                </div>
+            </div>
+
+{% endblock %}

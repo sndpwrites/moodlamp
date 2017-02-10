@@ -1,0 +1,191 @@
+      <!DOCTYPE html>
+      <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <meta http-equiv="X-UA-Compatible" content="IE=edge">
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+          <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+          <meta name="description" content="">
+          <meta name="author" content="">
+
+
+          <title>MoodLamp</title>
+
+          <!-- Latest compiled and minified CSS -->
+      	   
+      	  {% load static %}
+          <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}"/>
+          <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
+          <script src="{% static 'js/canvasjs.min.js' %}"></script>
+        </head>
+
+        <body>
+          <nav class="navbar navbar-inverse">
+            <div class="container">
+              <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Mood Lamp</a>
+              </div>
+              
+            </div>
+          </nav>
+          
+      	 <div class="content-wrapper">
+            <div id="hero" class="top">
+              <div class="container hero-container">
+                <div class="col-xs-10 col-xs-offset-1 text-center">
+                  <h1>Mood Lamp</h1>
+                </div>
+                <div class="col-xs-10 margin-top-sm col-xs-offset-1 text-center">
+                  <h3>
+                      Combine your skills with the power of machine learning to discover the true potential of your text and image data.
+                  </h3>
+                </div>
+              </div>  
+          </div>
+          <div class="container">
+            <div class="row">
+              <div class="col-md-6">
+                <form>
+                  <br>
+                  <br>
+                    <div class="input-group form-group">
+                      <span class="input-group-addon" id="basic-addon1">@</span>
+                      <input type="text" class="form-control" placeholder="Twitter Username" aria-describedby="basic-addon1">
+                    </div>
+                    <div class="input-group form-group">
+                      <span class="input-group-addon" id="basic-addon1">@</span>
+                      <input type="text" class="form-control" placeholder="Instagram Username" aria-describedby="basic-addon1">
+                  </div>
+                  <div class="form-group">
+                    <btn class="form-control btn btn-primary" type="submit" value="submit">Submit</btn>
+                  </div>
+                </form>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <h3 style="text-align:center">Tweets</h3>
+                  <li>Tweet 1</li>
+                  <li>Tweet 1</li>
+                  <li>Tweet 1</li>
+                  <li>Tweet 1</li>
+                  <li>Tweet 1</li>
+                  <li>Tweet 1</li>
+                  <li>Tweet 1</li>
+                  <li>Tweet 1</li>
+                  <li>Tweet 1</li>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container">
+            <div class="row">
+              <div class="col-md-6">
+                  <script type="text/javascript">
+              window.onload = function () {
+                var chart = new CanvasJS.Chart("chartContainer", {
+                  title: {
+                    text: "Line Chart",
+                    fontSize: 30
+                  },
+                  animationEnabled: true,
+                  axisX: {
+                    gridColor: "Silver",
+                    tickColor: "silver",
+                    valueFormatString: "DD/MMM"
+                  },
+                  toolTip: {
+                    shared: true
+                  },
+                  theme: "theme2",
+                  axisY: {
+                    gridColor: "Silver",
+                    tickColor: "silver"
+                  },
+                  legend: {
+                    verticalAlign: "center",
+                    horizontalAlign: "right"
+                  },
+                  data: [
+                  {
+                    type: "line",
+                    showInLegend: true,
+                    lineThickness: 2,
+                    name: "Visits",
+                    markerType: "square",
+                    color: "#F08080",
+                    dataPoints: [
+                    { x: new Date(2010, 0, 3), y: 650 },
+                    { x: new Date(2010, 0, 5), y: 700 },
+                    { x: new Date(2010, 0, 7), y: 710 },
+                    { x: new Date(2010, 0, 9), y: 658 },
+                    { x: new Date(2010, 0, 11), y: 734 },
+                    { x: new Date(2010, 0, 13), y: 963 },
+                    { x: new Date(2010, 0, 15), y: 847 },
+                    { x: new Date(2010, 0, 17), y: 853 },
+                    { x: new Date(2010, 0, 19), y: 869 },
+                    { x: new Date(2010, 0, 21), y: 943 },
+                    { x: new Date(2010, 0, 23), y: 970 }
+                    ]
+                  },
+                  {
+                    type: "line",
+                    showInLegend: true,
+                    name: "Unique Visits",
+                    color: "#20B2AA",
+                    lineThickness: 2,
+
+                    dataPoints: [
+                    { x: new Date(2010, 0, 3), y: 510 },
+                    { x: new Date(2010, 0, 5), y: 560 },
+                    { x: new Date(2010, 0, 7), y: 540 },
+                    { x: new Date(2010, 0, 9), y: 558 },
+                    { x: new Date(2010, 0, 11), y: 544 },
+                    { x: new Date(2010, 0, 13), y: 693 },
+                    { x: new Date(2010, 0, 15), y: 657 },
+                    { x: new Date(2010, 0, 17), y: 663 },
+                    { x: new Date(2010, 0, 19), y: 639 },
+                    { x: new Date(2010, 0, 21), y: 673 },
+                    { x: new Date(2010, 0, 23), y: 660 }
+                    ]
+                  }
+                ],
+                legend: {
+                  cursor: "pointer",
+                  itemclick: function (e) {
+                    if (typeof (e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
+                      e.dataSeries.visible = false;
+                    }
+                    else {
+                      e.dataSeries.visible = true;
+                    }
+                    chart.render();
+                  }
+                }
+            });
+
+            chart.render();
+          }
+
+          </script>
+                <div id="chartContainer" style="height: 400px; width: 100%;"></div>
+              </div>
+            </div>
+          </div>
+
+
+
+          <!-- JavaScript-->
+
+          {% load static %}  
+          <script src="{% static 'js/jquery.js' %}"></script>
+          <script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+        </body>
+      </html>

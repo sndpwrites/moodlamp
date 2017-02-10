@@ -1,0 +1,30 @@
+{% extends "personal/header.html" %}
+
+{% block content %}
+		<div id="use_cases"  fill="white" class="padding-bottom-md">
+
+            <div class="container">
+                <div class="row text-center margin-top-md margin-bottom-md">
+                    <script type="text/javascript">
+                        window.onload = function () {
+                            var chart = new CanvasJS.Chart("chartContainer", {
+                                title: {
+                                    text: "Basic Column Chart"
+                                },
+                                data: [{
+                                    type: "column",
+                                    dataPoints: [
+                                       {{answer}}
+                                    ]
+                                }]
+                            });
+                            chart.render();
+                        }
+                    </script>
+                    <div id="chartContainer" style="height: 400px; width: 100%;"></div>
+
+
+                </div>
+            </div>
+
+{% endblock %}

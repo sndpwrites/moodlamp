@@ -1,0 +1,79 @@
+{% extends "webapp/header.html" %}
+
+{% block content %}
+	{% load static %}
+	<div class="video-row">
+            <div class="container video-holder">
+                <div class="row margin-top-md padding-bottom-md">
+                    <div class="col-sm-12 story">
+                        <div class="row">
+                            <script type="text/javascript">
+                        window.onload = function () {
+                            var chart = new CanvasJS.Chart("chartContainer", {
+                                title: {
+                                    text: "Basic Column Chart"
+                                },
+                                data: [{
+                                    type: "column",
+                                    dataPoints: [
+                                       {{mood}}
+                                    ]
+                                }]
+                            });
+                            chart.render();
+                        }
+                    </script>
+                            <div id="lineChartContainer" style="height: 400px; width: 100%;"></div>
+                        </div>
+                </div>
+            </div>
+        </div>
+
+        </div>
+        <div class="container">
+			<div class="row">
+				<div class="col-md-6">
+					<h3 style="text-align:center">Recent Tweets</h3>
+					{% if tweets %}
+						<div class="block-content">
+							<ul class="list-comments">
+								{% for data in tweets %}
+								  <li>
+									<img src="{% static 'img/headshot2.jpg' %}" class="pull-left img-circle">
+									<p>{{data}}</p>
+								  </li>
+								  <div class="clearfix"></div>
+								{% endfor %}
+								
+				  
+							</ul>
+						</div>
+					{% else %}
+						<b><h3>No Tweets</h3><b>
+					{% endif %}
+				</div>
+				<div class="col-md-6">
+					<h3 style="text-align:center">Recent Instagram Feed</h3>
+					{% if instaFeeds %}
+						<div class="block-content">
+							<ul class="list-comments">
+								{% for data in instaFeeds %}
+								  <li>
+									<img src="{% static 'img/headshot2.jpg' %}" class="pull-left img-circle">
+									<p>{{data}}</p>
+								  </li>
+								  <div class="clearfix"></div>
+								{% endfor %}
+								
+				  
+							</ul>
+						</div>
+					{% else %}
+						<b><h3>No Feeds</h3><b>
+					{% endif %}
+            
+				</div>
+				</div>
+			</div>
+		</div>
+{% endblock %}
